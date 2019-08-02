@@ -5,7 +5,6 @@ from keras.preprocessing.sequence import pad_sequences
 import json
 import tensorflow as tf
 
-
 app = Flask(__name__)
 
 
