@@ -3,6 +3,7 @@ import numpy as np
 #read data
 df = pd.read_csv('data/emails.csv', encoding='latin-1')
 df.head()
+
 # Cleaning the texts
 ''''
 import re
@@ -22,9 +23,7 @@ df['text'] = df['text'].apply(filter_stop_words)
 
 '''
 
-
 #Split data train/test
-
 from sklearn.model_selection import train_test_split
 y=df['spam']
 sentences_train, sentences_test, y_train, y_test = train_test_split(df['text'], y, test_size=0.3, random_state=1234)
@@ -67,12 +66,9 @@ loss, accuracy = model.evaluate(X_test, y_test, verbose=False)
 print("Testing Accuracy:  {:.4f}".format(accuracy))
 
 
-
 from sklearn.metrics import confusion_matrix
 y_pred = model.predict_classes(X_test)
 matrix = confusion_matrix(y_test, y_pred)
-
-
 
 
 #save tokenizer
@@ -84,11 +80,3 @@ with open('tokenizer.json', 'w', encoding='utf-8') as f:
 model.save('spam_model.h5')  # creates a HDF5 file 'my_model.h5'
 
 del model  # deletes the existing model
-
-
-data = ['hello i need this task next week please']
-data = ['this is a test']
-vect = tokenizer.texts_to_sequences(data)
-vect = pad_sequences(vect, padding='post', maxlen=300)
-my_prediction = model.predict(vect)
-model.predict_classes(vect)
