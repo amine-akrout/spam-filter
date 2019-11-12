@@ -1,38 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html  >
 <head>
-	<title>Home</title>
-	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+  <!-- Site made with Mobirise Website Builder v4.11.5, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.11.5, mobirise.com">  
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='assets/images/logo4.png') }}" type="image/x-icon">
+  <meta name="description" content="Web Site Maker Description">
+  
+  <title>home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/bootstrap/css/bootstrap.min.css') }}"> 
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/bootstrap/css/bootstrap-grid.min.css') }}"> 
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/bootstrap/css/bootstrap-reboot.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/tether/tether.min.css') }}"> 
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/theme/css/style.css') }}"> 
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="{{ url_for('static', filename='assets/mobirise/css/mbr-additional.css') }}" type="text/css">
+  
+  
+  
 </head>
 <body>
+  <section class="header1 cid-rHvyLfA1gn" id="header16-6">
 
-	<header>
-		<div class="container">
-		<div id="brandname">
-			Spam Filter
-		</div>
-		<h2>Spam Detection For e-mails</h2>
-		
-	</div>
-	</header>
+    
 
-	<div class="ml-container">
+    
 
-		<form action="{{ url_for('predict')}}" method="POST">
-		<p>Enter Your email Here</p>
-		<!-- <input type="text" name="comment"/> -->
-		<textarea name="comment" rows="4" cols="50"></textarea>
-		<br/>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-10 align-center">
+                <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1">
+                    Spam filter</h1>
+                
+                <p class="mbr-text pb-3 mbr-fonts-style display-5">
+                    Spam detction for e-mails using Deep Learning</p>
+                <div class="mbr-section-btn"><a class="btn btn-md btn-black-outline display-4" href="https://github.com/amine-akrout/spam-filter">LEARN MORE</a></div>
+            </div>
+        </div>
+    </div>
 
-		<input type="submit" class="btn-info" value="predict">
-		
-	</form>
-		
-	</div>
+</section>
 
-	
-	
+<section class="engine"><a href="https://mobirise.info/u">bootstrap html templates</a></section><section class="mbr-section form1 cid-rHvyBaNomz mbr-parallax-background" id="form1-5">
 
+    
+
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="title col-12 col-lg-8">
+                <h2 class="mbr-section-title align-center pb-3 mbr-fonts-style display-2"></h2>
+                <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-5"></h3>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="media-container-column col-lg-8" data-form-type="formoid">
+                <!---Formbuilder Form--->
+                <form action="{{ url_for('predict')}}" method="POST" class="mbr-form form-with-styler">
+                    <div class="row">
+                        
+                        <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
+                        </div>
+                    </div>
+                    <div class="dragArea row">
+                        
+                        
+                        
+                        <div data-for="comment" class="col-md-12 form-group">
+                            <label for="message-form1-5" class="form-control-label mbr-fonts-style display-5">Enter you e-mail here :&nbsp;</label>
+                            <textarea name="comment" data-form-field="Message" class="form-control display-7" id="message-form1-5"></textarea>
+                        </div>
+                        <div class="col-md-12 input-group-btn align-center"><button type="submit" class="btn btn-primary btn-form display-4" value="predict">Pedict</button></div>
+                    </div>
+                </form><!---Formbuilder Form--->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <script src="{{ url_for('static', filename='assets/web/assets/jquery/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/popper/popper.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/bootstrap/js/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/tether/tether.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/smoothscroll/smooth-scroll.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/parallax/jarallax.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/theme/js/script.js') }}"></script>
+  
 </body>
 </html>
