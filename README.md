@@ -13,5 +13,5 @@ deploying a Keras ResNet model with Flask and Docker for subsequent monitoring i
 2. run the command `docker-compose up` 
 3. Open the web application in your browser 
 
-
-![demo](https://github.com/amine-akrout/spam-filter/tree/master/templates/demo.gif)
+## What the app looks like
+![demo](https://github.com/amine-akrout/spam-filter/blob/master/templates/demo.gif)
