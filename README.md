@@ -12,3 +12,6 @@ deploying a Keras ResNet model with Flask and Docker for subsequent monitoring i
 1. Clone the repository `https://github.com/amine-akrout/spam-filter.git`
 2. run the command `docker-compose up` 
 3. Open the web application in your browser 
+
+
+![demo](https://github.com/amine-akrout/spam-filter/tree/master/templates/demo.gif)
