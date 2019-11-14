@@ -1,5 +1,5 @@
 # Deploying Keras model using Flask and Docker
-deploying a Keras ResNet model with Flask and Docker for Spam detection 
+deploying a Keras LSTM model with Flask and Docker for Spam detection 
 
 
 1. Train an LSTM model for spam detection `model.py`
