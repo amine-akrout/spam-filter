@@ -27,22 +27,22 @@ df['text'] = df['text'].apply(filter_stop_words)
 from sklearn.model_selection import train_test_split
 y=df['spam']
 sentences_train, sentences_test, y_train, y_test = train_test_split(df['text'], y, test_size=0.3, random_state=1234)
-from keras.preprocessing.text import Tokenizer
+from tensorflow.keras.preprocessing.text import Tokenizer
 tokenizer = Tokenizer(num_words=10000)
 tokenizer.fit_on_texts(sentences_train)
 X_train = tokenizer.texts_to_sequences(sentences_train)
 X_test = tokenizer.texts_to_sequences(sentences_test)
 vocab_size = len(tokenizer.word_index) + 1
 
-from keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.preprocessing.sequence import pad_sequences
 maxlen = 100
 X_train = pad_sequences(X_train, padding='post', maxlen=maxlen)
 X_test = pad_sequences(X_test, padding='post', maxlen=maxlen)
 
 
-from keras.models import Sequential
-from keras import layers
-from keras.layers import Dense, LSTM
+from tensorflow.keras.models import Sequential
+from tensorflow.keras import layers
+from tensorflow.keras.layers import Dense, LSTM
 
 embedding_dim = 50
 
@@ -54,10 +54,10 @@ model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy']
 model.summary()
 # Calculate the weights for each class so that we can balance the data
 from sklearn.utils import class_weight
-weights = class_weight.compute_class_weight('balanced', np.unique(y_train), y_train)
+#weights = class_weight.compute_class_weight('balanced', np.unique(y_train), y_train)
 
 ## Fit the model
-model.fit(X_train, y_train, validation_split=0.3, epochs=3, class_weight=weights)
+model.fit(X_train, y_train, validation_split=0.2, epochs=5) #, class_weight=weights
 
 ###Test model
 loss, accuracy = model.evaluate(X_train, y_train, verbose=False)
@@ -80,3 +80,11 @@ with open('tokenizer.json', 'w', encoding='utf-8') as f:
 model.save('spam_model.h5')  # creates a HDF5 file 'my_model.h5'
 
 del model  # deletes the existing model
+
+
+clf = load_model('spam_model.h5')
+comment = "this is a test"
+data = [comment]
+vect = tokenizer.texts_to_sequences(data)
+vect = pad_sequences(vect, padding='post', maxlen=100)
+prediction = clf.predict_classes(vect)
