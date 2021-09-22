@@ -11,7 +11,8 @@
 `docker-compose up`
 
 3. Enjoy!
-Access localhost:8080 to try it
+
+Access http://localhost:5000/ to try it
 
 
 ![alt text](demo/demo.gif)
