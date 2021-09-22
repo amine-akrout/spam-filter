@@ -83,6 +83,8 @@ del model  # deletes the existing model
 
 
 clf = load_model('spam_model.h5')
+
+# test if it works
 comment = "this is a test"
 data = [comment]
 vect = tokenizer.texts_to_sequences(data)
